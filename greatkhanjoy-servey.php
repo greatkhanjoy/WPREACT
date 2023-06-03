@@ -51,7 +51,6 @@ class Greatkhanjoy_Floating_Survey
     }
 
 
-
     // Load Assets
     public function load_assets()
     {
@@ -89,9 +88,7 @@ class Greatkhanjoy_Floating_Survey
     // Activate the plugin
     public function activate()
     {
-        //Load Assets
-        // $this->load_assets();
-        // $this->register_survey_block();
+        flush_rewrite_rules();
 
         add_action('wp_enqueue_scripts', array($this, 'load_assets'));
         add_action('admin_enqueue_scripts', array($this, 'gfsurvey_admin_scripts'));
